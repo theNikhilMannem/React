@@ -1,6 +1,6 @@
 /*
 
-In React, you can pass props, or properties, to child components.
+In React, you can pass props, or properties, to child components (from parent components).
 Say you have an App component which renders a child component called CurrentDate which is a stateless functional component.
 You can pass CurrentDate a user property by writing: 
 <App>
