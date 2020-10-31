@@ -1,0 +1,65 @@
+/*
+
+The callback from a Child Component as an element changes and it is actually accessed through state props in the Parent, can be passed as props backc to the Parent to actually change the element.
+This updates that element in the state of the parent, which is passed as props to both children.
+
+The data flows between the components being the single source of truth remains the state of the Parent Component.
+
+*/
+
+
+// Parent Component.
+class MyApp extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      inputValue: ''
+    }
+    this.handleChange = this.handleChange.bind(this);
+  }
+  handleChange(event) {
+    this.setState({
+      inputValue: event.target.value
+    });
+  }
+  render() {
+    return (
+       <div>
+       <GetInput input={this.state.inputValue} handleChange={this.handleChange} />
+       <RenderInput input={this.state.inputValue} />
+       </div>
+    );
+  }
+};
+
+// Child Component.
+class GetInput extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <h3>Get Input:</h3>
+        <input
+          value={this.props.input}
+          onChange={this.props.handleChange}/>
+      </div>
+    );
+  }
+};
+
+// Child Component.
+class RenderInput extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <h3>Input Render:</h3>
+        <p>{this.props.input}</p>
+      </div>
+    );
+  }
+};
