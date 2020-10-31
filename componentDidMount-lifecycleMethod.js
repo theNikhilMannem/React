@@ -1,6 +1,8 @@
 /*
 
+componentDidMount() method is called after a component is mounted to the DOM.
 
+Any calls to setState() here will trigger a re-rendering of your component.
 
 */
 
