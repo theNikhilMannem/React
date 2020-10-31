@@ -18,7 +18,6 @@ class OnlyEvens extends React.Component {
     if (nextProps.value % 2 != 0) {
       return false;
     }
-    // console.log(nextProps.value);
     return true;
   }
   componentDidUpdate() {
