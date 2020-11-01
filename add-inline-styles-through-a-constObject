@@ -1,0 +1,29 @@
+/*
+
+You can assign a style object to a constant so that there will no clutter inside the JSX code: Define a const styles and assign it a styles object as below!
+
+const styles = {
+  color: "teal",
+  fontSize: 40
+}
+
+Now, you can use that 'styles' to be assigned to the 'style' attribute of the element you want to style as such!
+
+*/
+
+
+// styles object
+const styles = {
+  color: "purple",
+  fontSize: 40,
+  border: "2px solid purple"
+};
+
+// Class Component.
+class Colorful extends React.Component {
+  render() {
+    return (
+      <div style={styles}>Style Me!</div>
+    );
+  }
+};
